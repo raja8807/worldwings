@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <meta
           name="description"
-          content="Join us in celebrating the union of Parul & Rahul"
+          content="Start your journey with the experienced team The complete and authorised agency for domestic and international tours and your travels need."
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
