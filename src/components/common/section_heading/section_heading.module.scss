@@ -1,0 +1,96 @@
+.SectionHeading {
+  text-align: center;
+  padding: 80px 0 70px 0;
+
+  p {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: bold;
+  }
+
+  i {
+    color: rgb(198, 198, 198);
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .divider {
+    // background-color: red;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px auto;
+
+    hr {
+      height: 2px;
+      width: 100%;
+      opacity: 1;
+      border: none;
+    }
+  }
+
+  &.v1 {
+    p {
+      color: $color_yellow_1;
+    }
+
+    h2 {
+      color: white;
+    }
+
+    hr {
+      background-color: $color_yellow_1;
+    }
+  }
+
+  &.v2 {
+    p {
+      color: white;
+    }
+
+    h2 {
+      color: $color_1;
+    }
+
+    hr {
+      background-color: $color_1;
+    }
+  }
+
+  &.v3 {
+    p {
+      color: $color_yellow_1;
+    }
+
+    h2 {
+      color: $color_1;
+    }
+
+    i {
+      color: rgb(107, 107, 107);
+
+    }
+
+    hr {
+      background-color: $color_yellow_1;
+    }
+  }
+
+  @include respond-below(md) {
+    p {
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: 32px;
+    }
+  }
+}

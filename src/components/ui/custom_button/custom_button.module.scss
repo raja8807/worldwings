@@ -1,0 +1,31 @@
+.CustomButton {
+  padding: 10px 30px;
+  border-radius: 24px;
+  outline: none;
+  min-width: 150px;
+  font-size: 18px;
+  border: 1px solid transparent;
+
+  &.v1 {
+    background-color: $color_yellow_2;
+    color: $color_1;
+    border-color: $color_1;
+
+    &:hover {
+      background-color: $color_yellow_1;
+    }
+  }
+
+  &.v2 {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0.5px);
+    color: $color_yellow_1;
+    border-color: $color_yellow_1;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+
+      backdrop-filter: blur(2px);
+    }
+  }
+}

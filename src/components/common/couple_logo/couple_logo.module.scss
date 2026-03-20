@@ -1,0 +1,29 @@
+.CoupleLogo {
+  width: fit-content;
+  border-radius: 50%;
+  background-color: $color_1;
+
+  width: 70px;
+  height: 70px;
+  @include flexCenter;
+  border: 2px solid $color_yellow_2;
+
+  h1 {
+    font-weight: 900;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    margin-right: 4px;
+    margin-top: 4px;
+  }
+
+  &:hover {
+    background-color: white;
+
+    h1 {
+      color: $color_1;
+    }
+  }
+}
