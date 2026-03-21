@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import styles from "./home.module.scss";
 import FONTS from "@/styles/fonts";
@@ -10,6 +10,7 @@ const HomeScreen = () => {
   const targetDate = new Date("2026-04-10T00:00:00"); // 🔥 change launch date
 
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
+  const [isMounted, setIsMounted] = useState(false);
 
   function getTimeLeft() {
     const now = new Date();
@@ -28,12 +29,17 @@ const HomeScreen = () => {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeLeft(getTimeLeft());
-    }, 1000);
+    let interval;
+    if (isMounted) {
+      interval = setInterval(() => {
+        setTimeLeft(getTimeLeft());
+      }, 1000);
+    } else {
+      setIsMounted(true);
+    }
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isMounted]);
 
   return (
     <div className={styles.HomeScreen}>
@@ -56,24 +62,26 @@ const HomeScreen = () => {
             Coming Soon
           </h1>
 
-          <div className={styles.count}>
-            <div>
-              <h2>{timeLeft.days}</h2>
-              <p>Days</p>
+          {isMounted && (
+            <div className={styles.count}>
+              <div data-aos="fade-up" data-aos-delay={"210"}>
+                <h2>{timeLeft.days}</h2>
+                <p>Days</p>
+              </div>
+              <div data-aos="fade-up" data-aos-delay={"240"}>
+                <h2>{timeLeft.hours}</h2>
+                <p>Hours</p>
+              </div>
+              <div data-aos="fade-up" data-aos-delay={"270"}>
+                <h2>{timeLeft.minutes}</h2>
+                <p>Minutes</p>
+              </div>
+              <div data-aos="fade-up" data-aos-delay={"280"}>
+                <h2>{timeLeft.seconds}</h2>
+                <p>Seconds</p>
+              </div>
             </div>
-            <div>
-              <h2>{timeLeft.hours}</h2>
-              <p>Hours</p>
-            </div>
-            <div>
-              <h2>{timeLeft.minutes}</h2>
-              <p>Minutes</p>
-            </div>
-            <div>
-              <h2>{timeLeft.seconds}</h2>
-              <p>Seconds</p>
-            </div>
-          </div>
+          )}
         </div>
       </CustomContainer>
     </div>
