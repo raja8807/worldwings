@@ -7,7 +7,7 @@ import FONTS from "@/styles/fonts";
 import { Image } from "react-bootstrap";
 
 const HomeScreen = () => {
-  const targetDate = new Date("2026-04-10T00:00:00"); // 🔥 change launch date
+  const targetDate = new Date("2026-04-10T00:00:00");
 
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
   const [isMounted, setIsMounted] = useState(false);
