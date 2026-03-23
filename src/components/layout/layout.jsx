@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       {children}
       {/* <p>foot</p> */}
     </div>
