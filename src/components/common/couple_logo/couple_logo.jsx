@@ -4,12 +4,12 @@ import FONTS from "@/styles/fonts";
 import Link from "next/link";
 import { Image } from "react-bootstrap";
 
-const CoupleLogo = () => {
+const Logo = ({isWhite = true}) => {
   return (
     <Link href="#" className={styles.CoupleLogo}>
-      <Image src="/logo/white logo.png" width={200} alt="logo" />
+      <Image src={isWhite ? "/logo/white logo.png" : "/logo/logo.png"} width={200} alt="logo" />
     </Link>
   );
 };
 
-export default CoupleLogo;
+export default Logo;

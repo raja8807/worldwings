@@ -1,0 +1,63 @@
+.RightMenu {
+  .MenuButton {
+    display: none;
+
+    svg {
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        color: $color_2;
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    .MenuButton {
+      display: block;
+    }
+  }
+}
+
+.navSm {
+  ul {
+    padding: 0;
+    margin: 0;
+
+    a,
+    p {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 600;
+      color: $color_2;
+      border-bottom: 1px solid $color_2;
+      padding: 5px 0;
+      margin-bottom: 16px;
+    }
+
+    .dropdown {
+      overflow: hidden;
+      animation: openDropDown 0.25s;
+
+      a {
+        margin-left: 20px;
+        border: none;
+        padding: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@keyframes openDropDown {
+  from {
+    height: 0px;
+  }
+
+  to {
+    height: fit-content;
+  }
+}

@@ -24,6 +24,7 @@
 
           li {
             list-style: none;
+            position: relative;
 
             a {
               color: white;
@@ -33,10 +34,58 @@
                 color: $color_1;
               }
             }
+
+            .dropdownWrap {
+              position: absolute;
+              top: 0px;
+              padding-top: 30px;
+              .dropdown {
+                background-color: white;
+                padding: 20px 10px;
+                min-width: 200px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                animation: openDropDown 0.25s;
+                transform-origin: top;
+
+                a {
+                  color: $color_text_grey;
+                  font-size: 16px;
+                  font-weight: normal;
+                  display: block;
+                  // margin-bottom: 10px;
+
+                  &:hover {
+                    color: $color_2;
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
+  }
+
+  @include respond-below(md) {
+    .wrap {
+      .navLg {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes openDropDown {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
   }
 }
 

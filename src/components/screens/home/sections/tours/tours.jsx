@@ -22,7 +22,7 @@ const ToursSection = () => {
     <section className={styles.ToursSection}>
       <CustomContainer>
         <div className={styles.wrap}>
-          {TOURS.map((tour) => {
+          {TOURS.map((tour, idx) => {
             return (
               <div
                 className={styles.tour}
@@ -30,6 +30,8 @@ const ToursSection = () => {
                 style={{
                   backgroundImage: `url('${tour.imgSrc}')`,
                 }}
+                data-aos="fade-left"
+                data-aos-delay={idx * 100}
               >
                 <p>Book Today</p>
                 <h3>{tour.name}</h3>

@@ -3,6 +3,49 @@ import CustomContainer from "@/components/ui/custom_container/custom_container";
 import styles from "./Header.module.scss";
 import Logo from "@/components/common/couple_logo/couple_logo";
 import Link from "next/link";
+import { ChevronDown } from "react-bootstrap-icons";
+import RightMenu from "./menu_button/menu_button";
+
+const NavItem = ({ item }) => {
+  const [showDropDown, setShowDropDown] = useState(false);
+
+  if (item.dropdown) {
+    return (
+      <li
+        onMouseEnter={() => {
+          setShowDropDown(true);
+        }}
+        onMouseLeave={() => {
+          setShowDropDown(false);
+        }}
+      >
+        <Link href={"#"}>
+          {item.title}
+          &nbsp;
+          <ChevronDown />
+        </Link>
+
+        {showDropDown && (
+         <div className={styles.dropdownWrap}>
+           <div className={`${styles.dropdown}`}>
+            {
+              item.dropdown.map((dd)=>{
+                return <Link href={"/"} key={dd.title}>{dd.title}</Link>
+              })
+            }
+          </div>
+         </div>
+        )}
+      </li>
+    );
+  }
+
+  return (
+    <li>
+      <Link href={"/"}>{item.title}</Link>
+    </li>
+  );
+};
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(true);
@@ -11,7 +54,20 @@ const Header = () => {
 
   const PAGES = [
     { title: "About Us" },
-    { title: "Tours" },
+    {
+      title: "Tours",
+      dropdown: [
+        {
+          title:"Domestic Tours",
+        },
+        {
+          title:"International Tours",
+        },
+        {
+          title:"Inbound  Tours",
+        }
+      ],
+    },
     { title: "Services" },
     { title: "Gallery" },
     { title: "Contact" },
@@ -51,15 +107,13 @@ const Header = () => {
             <nav className={styles.navLg}>
               <ul>
                 {PAGES.map((page) => {
-                  return (
-                    <li key={page.title}>
-                      <Link href={"/"}>{page.title}</Link>
-                    </li>
-                  );
+                  return <NavItem key={page.title} item={page} />;
                 })}
               </ul>
             </nav>
           </div>
+
+          <RightMenu pages={PAGES}/>
         </div>
       </CustomContainer>
     </header>
