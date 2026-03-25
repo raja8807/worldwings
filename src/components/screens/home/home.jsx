@@ -11,7 +11,7 @@ const HomeScreen = () => {
   return (
     <>
       <BannerSection />
-      <AboutUsSection />
+      {/* <AboutUsSection /> */}
       <ToursSection />
 
       <DestinationsSection />

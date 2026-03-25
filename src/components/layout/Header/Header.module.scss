@@ -3,18 +3,20 @@
   z-index: 1000;
   padding: 10px 0;
 
-  &.scrolled {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
+  background-color: $color_1;
+
+
 
   .wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .left {
       display: flex;
       align-items: center;
       gap: 100px;
+
       .navLg {
         ul {
           display: flex;
@@ -31,7 +33,7 @@
               font-size: 18px;
 
               &:hover {
-                color: $color_1;
+                color: $color_2;
               }
             }
 
@@ -39,6 +41,7 @@
               position: absolute;
               top: 0px;
               padding-top: 30px;
+
               .dropdown {
                 background-color: white;
                 padding: 20px 10px;

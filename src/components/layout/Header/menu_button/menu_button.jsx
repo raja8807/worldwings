@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronDown, List } from "react-bootstrap-icons";
+import { ChevronDown, List, Telephone, TelephoneFill } from "react-bootstrap-icons";
 import styles from "./menu_button.module.scss";
 import { Offcanvas } from "react-bootstrap";
 import Logo from "@/components/common/couple_logo/couple_logo";
@@ -59,18 +59,18 @@ const RightMenu = ({ pages, setShowModal }) => {
       <button
         className={styles.enquireBtn}
         style={{
-          backgroundColor: '#f5ba17',
+          backgroundColor: '#1b4788',
           color: 'white',
           border: 'none',
           padding: '8px 20px',
-          fontWeight: '600',
+          // fontWeight: '600',
           borderRadius: '4px',
           marginRight: '15px',
           cursor: 'pointer'
         }}
         onClick={() => setShowModal(true)}
       >
-        Enquire Now
+        <TelephoneFill /> +91 94441 75678
       </button>
 
       <div className={styles.MenuButton}>

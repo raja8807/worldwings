@@ -84,8 +84,11 @@ const Header = ({ setShowModal }) => {
     >
       <CustomContainer lg>
         <div className={styles.wrap}>
+
+
+          <Logo isWhite={false} />
           <div className={styles.left}>
-            <Logo />
+
             <nav className={styles.navLg}>
               <ul>
                 {PAGES.map((page) => {
