@@ -20,7 +20,7 @@ const BannerSection = () => {
   ];
 
   return (
-    <div className={styles.BannerSection}>
+    <section className={styles.BannerSection}>
       <Carousel fade indicators={false} controls={false} draggable={false}>
         {bgImages.map((bg) => {
           return (
@@ -76,7 +76,7 @@ const BannerSection = () => {
           );
         })}
       </Carousel>
-    </div>
+    </section>
   );
 };
 

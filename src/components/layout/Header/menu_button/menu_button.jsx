@@ -42,7 +42,7 @@ const NavItem = ({ item, setShowDrawer }) => {
 
   return (
     <div>
-      <Link href={"/"}
+      <Link href={item.href || "#"}
         onClick={() => {
           setShowDrawer(false);
         }}

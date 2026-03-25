@@ -52,7 +52,7 @@ const Footer = () => {
                         <ul className={styles.linkList}>
                             {
                                 PAGES.map((page) => {
-                                    return <li key={page.title}><Link href="#"><CaretRightFill className={styles.bulletIcon} /> {page.title}</Link></li>
+                                    return <li key={page.title}><Link href={page.href || "#"}><CaretRightFill className={styles.bulletIcon} /> {page.title}</Link></li>
                                 })
                             }
 

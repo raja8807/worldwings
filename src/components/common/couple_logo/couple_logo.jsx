@@ -5,7 +5,7 @@ import { Image } from "react-bootstrap";
 
 const Logo = ({ isWhite = true }) => {
   return (
-    <Link href="#" className={styles.CoupleLogo}>
+    <Link href="/" className={styles.CoupleLogo}>
       <Image src={isWhite ? "/logo/white logo.png" : "/logo/logo.png"} width={200} alt="logo" />
     </Link>
   );

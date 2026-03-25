@@ -1,5 +1,5 @@
 export const PAGES = [
-    { title: "About Us" },
+    { title: "About Us", href: "/about" },
     {
         title: "Tours",
         dropdown: [

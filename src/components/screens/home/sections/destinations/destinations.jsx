@@ -39,7 +39,7 @@ const DestinationsSection = () => {
   ];
 
   return (
-    <div className={styles.DestinationsSection}>
+    <section className={styles.DestinationsSection}>
       <CustomContainer>
         <SectionHeading
           head="Popular Destinations"
@@ -71,7 +71,7 @@ const DestinationsSection = () => {
 
         </div>
       </CustomContainer>
-    </div>
+    </section>
   );
 };
 

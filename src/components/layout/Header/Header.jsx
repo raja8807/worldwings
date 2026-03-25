@@ -43,7 +43,7 @@ const NavItem = ({ item }) => {
 
   return (
     <li>
-      <Link href={"/"}>{item.title}</Link>
+      <Link href={item.href || "#"}>{item.title}</Link>
     </li>
   );
 };
