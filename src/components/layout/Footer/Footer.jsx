@@ -29,8 +29,8 @@ const Footer = () => {
                                 </div>
                                 <div className={styles.contactDetails}>
                                     <span className={styles.contactLabel}>Call Us 24/7</span>
-                                    <a href="tel:+25621452156" className={styles.contactNumber}>
-                                        (+256) 2145.2156
+                                    <a href="tel:+919444175678" className={styles.contactNumber}>
+                                        +91 94441 75678
                                     </a>
                                 </div>
                             </div>

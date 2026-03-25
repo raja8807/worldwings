@@ -14,13 +14,14 @@ const BlogSection = () => {
                     head="Travel Stories & Guides"
                     caption="Read exciting travel stories, expert guides, and helpful tips."
                     title="Our Blog"
+                    noAnimation
                 />
 
                 <Row className={styles.cardsRow}>
                     {BLOG_POSTS.map((post, idx) => (
                         <Col lg={4} md={6} sm={12} key={post.id} className={styles.cardCol}>
                             <Link href={`/blog/${post.id}`} className={styles.blogCard}
-                                data-aos="fade-up"
+                                // data-aos="fade-up"
                                 data-aos-delay={idx * 100}
                             >
                                 <div
