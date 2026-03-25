@@ -54,10 +54,15 @@
       justify-content: space-between;
       font-weight: 600;
       color: $color_2;
-      border-bottom: 1px solid $color_2;
+      // border-bottom: 1px solid $color_2;
       padding: 5px 0;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+
+      &:hover {
+        color: $color_1 !important;
+      }
     }
+
 
     .dropdown {
       overflow: hidden;
