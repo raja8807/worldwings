@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./loading_screen.module.scss";
-import { HeartFill } from "react-bootstrap-icons";
+import { Image } from "react-bootstrap";
 
 const LoadingScreen = (noBg) => {
   return (
     <div className={`${styles.LoadingScreen} ${noBg ? styles.noBg : ""}`}>
-      <HeartFill />
+      <Image src="/images/loader.gif" alt="World Wings" width={400} />
     </div>
   );
 };

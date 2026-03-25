@@ -44,18 +44,35 @@ const NavItem = ({ item, setShowDrawer }) => {
     <div>
       <Link href={"/"}
         onClick={() => {
-                    setShowDrawer(false);
-                  }}
+          setShowDrawer(false);
+        }}
       >{item.title}</Link>
     </div>
   );
 };
 
-const RightMenu = ({ pages }) => {
+const RightMenu = ({ pages, setShowModal }) => {
   const [showDrawer, setShowDrawer] = useState(false);
 
   return (
     <div className={styles.RightMenu}>
+      <button
+        className={styles.enquireBtn}
+        style={{
+          backgroundColor: '#f5ba17',
+          color: 'white',
+          border: 'none',
+          padding: '8px 20px',
+          fontWeight: '600',
+          borderRadius: '4px',
+          marginRight: '15px',
+          cursor: 'pointer'
+        }}
+        onClick={() => setShowModal(true)}
+      >
+        Enquire Now
+      </button>
+
       <div className={styles.MenuButton}>
         <List
           onClick={() => {
@@ -92,6 +109,7 @@ const RightMenu = ({ pages }) => {
           </Offcanvas.Body>
         </Offcanvas>
       </div>
+
     </div>
   );
 };

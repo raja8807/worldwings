@@ -72,6 +72,29 @@
     }
   }
 
+  .counts {
+    margin-top: 160px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+
+    .count {
+      border: 1px solid $color_2;
+      padding: 20px;
+      background-color: rgba($color_1, 0.1);
+      border-radius: 12px;
+      h3 {
+        font-size: 50px;
+        font-weight: bold;
+        color: $color_2;
+      }
+
+      p {
+        color: $color_text_grey;
+      }
+    }
+  }
+
   @include respond-below(md) {
     .wrap {
       grid-template-columns: 1fr;
@@ -81,6 +104,12 @@
           grid-template-columns: 1fr;
         }
       }
+    }
+
+    .counts {
+      margin-top: 80px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
   }
 }

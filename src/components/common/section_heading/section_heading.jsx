@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./section_heading.module.scss";
 
-const SectionHeading = ({ title, head, caption }) => {
+const SectionHeading = ({ title, head, caption, center }) => {
   const text = head || "";
 
   return (
-    <div className={styles.SectionHeading}>
+    <div className={`${styles.SectionHeading} ${center ? styles.center : ""}`}>
       {title && <p data-aos="fade-up">{title}</p>}
 
       <h2 className={styles.charWrap}>
@@ -24,7 +24,7 @@ const SectionHeading = ({ title, head, caption }) => {
       </h2>
 
       {caption && <small
-      data-aos="fade-in"
+        data-aos="fade-in"
       >{caption}</small>}
     </div>
   );

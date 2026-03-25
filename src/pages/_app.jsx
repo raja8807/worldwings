@@ -1,5 +1,5 @@
 import "../styles/globals.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import NProgress from "nprogress";
@@ -10,6 +10,7 @@ import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import Layout from "@/components/layout/layout";
 import { FONTS } from "@/styles/fonts";
+import LoadingScreen from "@/components/ui/loading_screen/loading_screen";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -33,6 +34,14 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
   return (
     <>
       <Head>
@@ -40,10 +49,13 @@ export default function App({ Component, pageProps }) {
         <title>World Wings | Coming Soon</title>
       </Head>
       <main className={FONTS.font2}>
-        <Layout>
-          <Component {...pageProps} />
-          <ToastContainer position="bottom-right" />
-        </Layout>
+        {loading ? <LoadingScreen />
+          :
+          <Layout>
+            <Component {...pageProps} />
+            <ToastContainer position="bottom-right" />
+          </Layout>
+        }
       </main>
     </>
   );

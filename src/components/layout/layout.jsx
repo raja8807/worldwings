@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
+import EnquiryModal from "../common/enquiry_modal/enquiry_modal";
 
 const Layout = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,9 +18,10 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <Header />
+      <Header setShowModal={setShow} />
       {children}
-      {/* <p>foot</p> */}
+      <Footer />
+      <EnquiryModal show={show} setShow={setShow} />
     </div>
   );
 };

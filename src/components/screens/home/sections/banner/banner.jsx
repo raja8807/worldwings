@@ -34,13 +34,42 @@ const BannerSection = () => {
                 ></div>
 
                 <div className={styles.cont}>
-                  <p className={FONTS.font2}>Travel Smarter, Travel Better</p>
-                  <h1 className={FONTS.font2}>
-                    Find your{" "}
-                    <span>
-                      next <span>stay</span>
-                    </span>
-                  </h1>
+                  <p
+                    className={FONTS.font2}
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                  >
+                    Travel Smarter, Travel Better
+                  </p>
+
+                  <div className={FONTS.font2}>
+                    <h1>
+                      <span className={styles.w1} data-aos="fade-up">
+                        Find
+                      </span>
+                      <span
+                        className={styles.w2}
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                      >
+                        Your
+                      </span>
+                      <span
+                        className={styles.w3}
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                      >
+                        Next
+                      </span>
+                      <span
+                        className={styles.w4}
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                      >
+                        Stay
+                      </span>
+                    </h1>
+                  </div>
                 </div>
               </div>
             </Carousel.Item>

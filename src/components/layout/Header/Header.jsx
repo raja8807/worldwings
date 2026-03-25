@@ -5,6 +5,7 @@ import Logo from "@/components/common/couple_logo/couple_logo";
 import Link from "next/link";
 import { ChevronDown } from "react-bootstrap-icons";
 import RightMenu from "./menu_button/menu_button";
+import { PAGES } from "@/constants/constants";
 
 const NavItem = ({ item }) => {
   const [showDropDown, setShowDropDown] = useState(false);
@@ -26,15 +27,15 @@ const NavItem = ({ item }) => {
         </Link>
 
         {showDropDown && (
-         <div className={styles.dropdownWrap}>
-           <div className={`${styles.dropdown}`}>
-            {
-              item.dropdown.map((dd)=>{
-                return <Link href={"/"} key={dd.title}>{dd.title}</Link>
-              })
-            }
+          <div className={styles.dropdownWrap}>
+            <div className={`${styles.dropdown}`}>
+              {
+                item.dropdown.map((dd) => {
+                  return <Link href={"/"} key={dd.title}>{dd.title}</Link>
+                })
+              }
+            </div>
           </div>
-         </div>
         )}
       </li>
     );
@@ -47,31 +48,12 @@ const NavItem = ({ item }) => {
   );
 };
 
-const Header = () => {
+const Header = ({ setShowModal }) => {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrolled, setScrolled] = useState(false);
 
-  const PAGES = [
-    { title: "About Us" },
-    {
-      title: "Tours",
-      dropdown: [
-        {
-          title:"Domestic Tours",
-        },
-        {
-          title:"International Tours",
-        },
-        {
-          title:"Inbound  Tours",
-        }
-      ],
-    },
-    { title: "Services" },
-    { title: "Gallery" },
-    { title: "Contact" },
-  ];
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,7 +95,7 @@ const Header = () => {
             </nav>
           </div>
 
-          <RightMenu pages={PAGES}/>
+          <RightMenu pages={PAGES} setShowModal={setShowModal} />
         </div>
       </CustomContainer>
     </header>
