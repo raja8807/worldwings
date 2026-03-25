@@ -56,22 +56,11 @@ const RightMenu = ({ pages, setShowModal }) => {
 
   return (
     <div className={styles.RightMenu}>
-      <button
-        className={styles.enquireBtn}
-        style={{
-          backgroundColor: '#1b4788',
-          color: 'white',
-          border: 'none',
-          padding: '8px 20px',
-          // fontWeight: '600',
-          borderRadius: '4px',
-          marginRight: '15px',
-          cursor: 'pointer'
-        }}
-        onClick={() => setShowModal(true)}
+      <Link href={'tel:+919444175678'}
+        className={styles.callBtn}
       >
-        <TelephoneFill /> +91 94441 75678
-      </button>
+        <TelephoneFill /> <span>+91 94441 75678</span>
+      </Link>
 
       <div className={styles.MenuButton}>
         <List
@@ -85,6 +74,7 @@ const RightMenu = ({ pages, setShowModal }) => {
           onHide={() => {
             setShowDrawer(false);
           }}
+          placement="end"
         >
           <Offcanvas.Header closeButton>
             <Logo isWhite={false} />

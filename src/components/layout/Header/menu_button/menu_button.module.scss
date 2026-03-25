@@ -1,7 +1,7 @@
 .RightMenu {
   display: flex;
   align-items: center;
-  gap: 10px;
+  // gap: 10px;
 
   .MenuButton {
     display: none;
@@ -17,13 +17,26 @@
     }
   }
 
+  .callBtn {
+    background-color: $color_2;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    margin-right: 15px;
+    cursor: pointer;
+
+  }
+
   @include respond-below(md) {
     .MenuButton {
       display: block;
     }
 
-    .enquireBtn {
-      display: none;
+    .callBtn {
+      span {
+        display: none;
+      }
     }
   }
 }
